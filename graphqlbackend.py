@@ -252,7 +252,7 @@ def get_uri(contract_address, token_id, owner_address):
 def get_address(address):
     with open('key.json', mode='r') as key_file:
         key = json.loads(key_file.read())['key']
-    api_url = "https://api.etherscan.io/api?module=account&action=tokennfttx&address=" + address + "&startblock=0&endblock=999999999&sort=asc&apikey=" + key
+    api_url = "https://api.etherscan.io/api?module=account&action=tokennfttx&address=" + address + "&startblock=0&endblock=999999999&sort=asc&apikey=2PDT5VZ6F6N5W8ZK284IJQE2Y5IETUP3P8" + key
 
     x = requests.get(api_url)
     alltransactions = x.json().get("result")
@@ -287,7 +287,7 @@ def get_random_address():
     address, owner = fetch_random()
     with open('key.json', mode='r') as key_file:
         key = json.loads(key_file.read())['key']
-    api_url = "https://api.etherscan.io/api?module=account&action=tokennfttx&address=" + address + "&startblock=0&endblock=999999999&sort=asc&apikey=" + key
+    api_url = "https://api.etherscan.io/api?module=account&action=tokennfttx&address=" + address + "&startblock=0&endblock=999999999&sort=asc&apikey=2PDT5VZ6F6N5W8ZK284IJQE2Y5IETUP3P8" + key
     print(api_url)
     x = requests.get(api_url)
     print(x.json())
